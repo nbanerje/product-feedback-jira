@@ -3,9 +3,9 @@ Capture product feedback via a Google Form and post to Jira, Slack, etc
 
 . You'll need to have a JIRA project created to capture and organize feedback.
 We created a Product Feedback (PF) project and then created epic tickets to capture the feedback
-submitted from the Google Form. You'll also need to creat a JIRA user that can make tickets to that project.
+submitted from the Google Form. You'll also need to create a JIRA user that can make tickets to that project.
 
-. Create a Slack Webhook to post reponses: https://api.slack.com/incoming-webhooks. You'll user the use the URL in the code below.
+. Create a Slack Webhook to post reponses: https://api.slack.com/incoming-webhooks. You'll user the use the URL in the code below. We post ours to our #produkt channel.
 
 . Create a Google Spreadsheet and copy the ID in the the form code below. The id are the characters after the /d/ in the url.
 

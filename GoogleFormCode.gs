@@ -10,8 +10,7 @@
 /// the script is still auth'd otherwise you will get Response Errors.
 
 
-var POST_URL = "https://hooks.slack.com/services/XXXXX";
-var response_url = "https://docs.google.com/spreadsheets/d/XXXXX"
+var POST_URL = "https://hooks.slack.com/services/XXXXX"
 var JIRA_BASE = "https://XXXX"
 var JIRA_URL = JIRA_BASE + "/rest/api/2/issue/"
 var JIRA_USER_URL = JIRA_BASE+ "/rest/api/2/user/search?username="
@@ -32,7 +31,7 @@ var PRE_CREATED_EPIC_LINKS = {
   }
 
 // Add one line to use BetterLog
-var Logger = BetterLog.useSpreadsheet('LOGGING_SPREADSHEET_ID'); 
+var Logger = BetterLog.useSpreadsheet('LOGGING_SPREADSHEET_ID')
 
 function onSubmit(e) {
   Logger.log(JSON.stringify(e))
@@ -118,7 +117,7 @@ function onSubmit(e) {
   catch (e) {
      e = (typeof e === 'string') ? new Error(e) : e;
     Logger.severe('%s: %s (line %s, file "%s"). Stack: "%s" . While processing %s.',e.name||'', 
-               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', user_response||'');
+               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', user_response||'')
   }
   Logger.log(user_response.getContentText())
   
@@ -160,7 +159,7 @@ function onSubmit(e) {
   catch (e) {
      e = (typeof e === 'string') ? new Error(e) : e;
     Logger.severe('%s: %s (line %s, file "%s"). Stack: "%s" . While processing %s.',e.name||'', 
-               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', jira_params||'');
+               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', jira_params||'')
   }
   
   //Send to slack
@@ -179,7 +178,7 @@ function onSubmit(e) {
   catch (e) {
      e = (typeof e === 'string') ? new Error(e) : e;
     Logger.severe('%s: %s (line %s, file "%s"). Stack: "%s" . While processing %s.',e.name||'', 
-               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', options||'');
+               e.message||'', e.lineNumber||'', e.fileName||'', e.stack||'', options||'')
   }
   
 }

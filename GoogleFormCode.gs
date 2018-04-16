@@ -163,17 +163,18 @@ function onSubmit(e) {
   }
   
   //Send to slack
-  var payload = { "payload": '{"text": "' + d + '"}' }
+  var payload = { "text": d }
 
   var options =
    {
      "method" : "post",
-     "payload" : payload
-   };
+     "contentType": "application/json",
+     "payload" : JSON.stringify(payload)
+   }
   
   try {
    response = UrlFetchApp.fetch(POST_URL, options)
-   Logger.log(response);
+   Logger.log(response)
   }
   catch (e) {
      e = (typeof e === 'string') ? new Error(e) : e;
